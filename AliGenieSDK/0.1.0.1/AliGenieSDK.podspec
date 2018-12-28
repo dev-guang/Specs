@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
     s.license      = { :type => "MIT", :file => "LICENSE" }
     s.author       = { "LDG" => "dglmarty@gmail.com" }
     s.platform     = :ios, "9.0"
-#    s.source       = { :git => "git@gitee.com:diguang/cloudhearing-voice-library.git", :tag => "#{s.version}" }
-    s.source       = { :git => "git@gitee.com:diguang/cloudhearing-voice-library.git", :branch => "CocoaPods" }
+    s.source       = { :git => "git@gitee.com:diguang/cloudhearing-voice-library.git", :tag => "#{s.version}" }
+#    s.source       = { :git => "git@gitee.com:diguang/cloudhearing-voice-library.git", :branch => "CocoaPods" }
     s.swift_version = '4.0'
     
     s.source_files = 'ManagementVoiceDemo/VoiceLib',
@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
     #                'ManagementVoiceDemo/VoiceLib/**/*.{pem,cfg,abnf,bnf,jek}',
     #                'ManagementVoiceDemo/VoiceLib/**/*.json'
     
-    s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO', 'VALID_ARCHS' => 'arm64 arm64e armv7 armv7s' }
+    s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
     
     s.dependency 'AliGenieSDKResources'
 end
