@@ -11,6 +11,9 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "9.0"
   s.source       = { :git => "git@gitee.com:diguang/cloudhearing-bluetooth-sdk.git", :tag => "#{s.version}" }
   s.requires_arc = true
+  
+  s.deprecated = true
+  s.deprecated_in_favor_of = 'BluetoothLibrary'
 
   s.subspec '2825' do |sp|
       sp.source_files  = 'Classes/2825', 'Classes/2825/**/*.{h,m}'
@@ -20,6 +23,8 @@ Pod::Spec.new do |s|
   s.subspec '2819' do |sp|
       sp.source_files  = 'Classes/2819', 'Classes/2819/**/*.{h,m}'
       sp.ios.vendored_library = 'Classes/2819/libCGABluetoothLib.a'
+      # 2819 蓝牙库存在兼容性问题，需要设置该属性
+      # s.xcconfig = { 'ONLY_ACTIVE_ARCH[config=Release]' => 'YES', 'ONLY_ACTIVE_ARCH[config=Debug]' => 'NO' }
       sp.xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' }
   end
 end
